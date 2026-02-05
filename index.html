@@ -10,14 +10,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
     :root {
-        /* Adjusted Theme Palette - Richer, more vibrant, less blindingly bright */
+        /* Adjusted Theme Palette */
         --bg-gradient: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%); /* Sky 200 to Sky 300 */
         --glass-bg: rgba(255, 255, 255, 0.92);
         --glass-border: rgba(255, 255, 255, 0.6);
         --primary-accent: #0284c7; /* Sky 600 */
         --primary-hover: #0369a1; /* Sky 700 */
         --text-main: #0f172a; /* Slate 900 */
-        --text-muted: #475569; /* Slate 600 - slightly darker for better contrast on vibrant bg */
+        --text-muted: #475569; /* Slate 600 */
         --correct-color: #059669; /* Emerald 600 */
         --incorrect-color: #e11d48; /* Rose 600 */
         --card-bg: #ffffff;
@@ -231,40 +231,59 @@
         margin-bottom: 30px;
     }
 
+    /* UPDATED OPTION BUTTON STYLES - GLASSY BLUE */
     .option-btn {
         width: 100%;
-        background-color: var(--card-bg);
-        color: var(--text-main);
-        border: 1px solid #e2e8f0;
+        /* Glassy Blue Gradient */
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.85), rgba(2, 132, 199, 0.9));
+        
+        /* Glass Effect Properties */
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        
+        /* White text for contrast against blue */
+        color: #ffffff;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        
+        /* Glassy Border */
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        
+        /* Inner light + Drop Shadow for depth */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        
         padding: 20px;
         border-radius: 16px;
         font-size: 1.15rem;
         cursor: pointer;
-        transition: all 0.2s ease;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         font-family: inherit;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        font-weight: 600;
+        letter-spacing: 0.3px;
     }
 
     .option-btn:hover:not(:disabled) {
-        background-color: var(--card-hover);
-        border-color: var(--primary-accent);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(2, 132, 199, 0.1);
+        /* Brighter/More Opaque on Hover */
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.95), rgba(2, 132, 199, 1));
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px -5px rgba(2, 132, 199, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+        border-color: rgba(255, 255, 255, 0.8);
     }
 
     .option-btn.correct {
-        background-color: #ecfdf5; /* Emerald 50 */
-        border-color: var(--correct-color);
-        color: var(--correct-color);
-        font-weight: 600;
+        /* Glassy Green */
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.95)); /* Emerald */
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        color: white;
     }
 
     .option-btn.incorrect {
-        background-color: #fff1f2; /* Rose 50 */
-        border-color: var(--incorrect-color);
-        color: var(--incorrect-color);
+        /* Glassy Red */
+        background: linear-gradient(135deg, rgba(244, 63, 94, 0.9), rgba(225, 29, 72, 0.95)); /* Rose */
+        border-color: rgba(255, 255, 255, 0.6);
+        color: white;
         opacity: 0.8;
     }
 
